@@ -2,7 +2,7 @@ name: My first workflow
 on:
   push:
     branches: 
-     - 'releasev1.0'
+     - 'release/v1.0'
     
 jobs:
   build:
