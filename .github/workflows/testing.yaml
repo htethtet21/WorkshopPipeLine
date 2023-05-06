@@ -23,3 +23,64 @@ jobs:
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
         run: railway up
+
+       - name: Send Notification
+        id: slack
+        uses: slackapi/slack-github-action@v1.23.0
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_LINK }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+        with:
+          payload: |
+            {
+              "blocks": [
+              {
+                "type": "header",
+                "text": {
+                  "type": "plain_text",
+                  "text": "SA56 CICD Submission",
+                  "emoji": true
+                }
+              },
+              {
+                "type": "section",
+                "fields": [
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Name:*\nShwe Yamin Oo"
+                  },
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Email:*\ne1112942@u.nus.edu"
+                  },
+                  {
+                    "type": "mrkdwn",
+                    "text": "Matricultaion:*\nA0269559E"
+                  },
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Respository:*\n"
+                  }
+                ]
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ""
+                },
+                "accessory": {
+                  "type": "button",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "Go",
+                    "emoji": true
+                  },
+                  "value": "click_me_123",
+                  "url": "",
+                  "action_id": "button-action"
+                }
+              }
+            ]
+            }
+
