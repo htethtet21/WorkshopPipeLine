@@ -59,7 +59,7 @@ jobs:
                   },
                   {
                     "type": "mrkdwn",
-                    "text": "*Respository:*\n"
+                    "text": "*Respository:*\n${{ github.event.repository.html_url }}"
                   }
                 ]
               },
@@ -67,7 +67,7 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": ""
+                  "text": "https://${{ secrets.DEPLOY_LINK }}.up.railway.app/"
                 },
                 "accessory": {
                   "type": "button",
