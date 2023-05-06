@@ -24,7 +24,7 @@ jobs:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
         run: railway up
 
-       - name: Send Notification
+      - name: Send Notification
         id: slack
         uses: slackapi/slack-github-action@v1.23.0
         env:
