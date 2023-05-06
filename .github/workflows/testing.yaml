@@ -77,7 +77,7 @@ jobs:
                     "emoji": true
                   },
                   "value": "click_me_123",
-                  "url": "https://${{ secrets.DEPLOY_LINK }}.up.railway.app/"
+                  "url": "https://${{ secrets.DEPLOY_LINK }}.up.railway.app/",
                   "action_id": "button-action"
                 }
               }
