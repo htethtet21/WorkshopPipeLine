@@ -1,0 +1,25 @@
+name: My first workflow
+on:
+  push:
+    branches: 
+     - 'release\/v[1-9]\d*\.[0-9]+'
+    
+jobs:
+  build:
+    if: "!startsWith(github.event.head_commit.message, '#NORUN')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v2
+        with:
+          node-version: v18.16.0
+
+      - name: envRailway
+        run: npm i -g @railway/cli
+
+      - name: Application
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+        run: railway up
