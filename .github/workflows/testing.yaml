@@ -2,7 +2,7 @@ name: My first workflow
 on:
   push:
     branches: 
-     - 'release\/v[1-9]\d*\.[0-9]+'
+     - 'releasev1.0'
     
 jobs:
   build:
