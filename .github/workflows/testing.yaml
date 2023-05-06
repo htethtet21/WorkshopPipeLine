@@ -77,7 +77,6 @@ jobs:
                     "emoji": true
                   },
                   "value": "click_me_123",
-                  "url": "",
                   "action_id": "button-action"
                 }
               }
